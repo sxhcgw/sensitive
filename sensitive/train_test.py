@@ -28,7 +28,7 @@ def print_result(predict_label, total_label, f):
     print('Accuracy: ', str(acc * 100.000) + '%')
     
     f.write(str(metrics.classification_report(label_array, predict_array)))
-    print metrics.classification_report(label_array, predict_array) 
+    print (metrics.classification_report(label_array, predict_array))
     
 
 def train(data_file, lable_file, train_model='D_tree'):
@@ -52,8 +52,8 @@ def train(data_file, lable_file, train_model='D_tree'):
     try:
         assert(data_array.shape[0] == label_array.shape[0])
     except:
-        print data_array.shape[0]
-        print label_array.shape[0]
+        print (data_array.shape[0])
+        print (label_array.shape[0])
 
     # 训练模型
     clf.fit(data_array, label_array)
@@ -77,7 +77,7 @@ def test(model, data_file, lable_file, predict_file, predict_probab_file):
         
     print('Accuracy: ', str(acc * 100.000) + '%')
     
-    print metrics.classification_report(label_array, lable)
+    print (metrics.classification_report(label_array, lable))
     
     return acc
 

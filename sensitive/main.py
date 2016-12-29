@@ -6,8 +6,8 @@ Created on Mon Nov 07 22:50:32 2016
 """
 
 import jieba
-import chi
-import train_test
+from sensitive import chi
+from sensitive import train_test
 
 corpus_dir = ''       '''原始语料的地址'''
 seg_corpus = ''       '''分词之后的语料地址'''
@@ -80,7 +80,7 @@ def GetResult():
     for character in character_list:
         character_dict[character] = 0
         
-    print len(character_dict)
+    print (len(character_dict))
     
     #训练集的向量转换
     w_ff = open('train_chi.txt', 'wb' )
@@ -119,10 +119,10 @@ def GetResult():
     label_f.close()
     
     '''分类器训练与测试'''
-    print 'Decision Tree is construct...'
+    print ('Decision Tree is construct...')
     clf = train_test.train('train_chi.txt', 'train.label', 'D_tree')
     avr_acc = train_test.test(clf, 'test_chi.txt', 'test.label', 'predict_dt.txt', 'probab_pre.txt')
-    print 'The acc of dt is ' + str(avr_acc)        
+    print ('The acc of dt is ' + str(avr_acc) )
         
     
     

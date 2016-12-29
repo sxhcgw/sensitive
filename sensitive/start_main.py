@@ -5,7 +5,7 @@ Created on Thu Jul 14 00:47:04 2016
 @author: dell
 """
 
-import new_main
+from sensitive import new_main
     
 root_file = 'D:/graduate_research/new_2'
 

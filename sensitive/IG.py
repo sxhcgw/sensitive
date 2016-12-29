@@ -54,18 +54,18 @@ def CalInfoGain(data_dict):
         size_of_this_category = iterm['size_of_the_category']   #得到该类语料的大小
         size_of_other_category = N - size_of_this_category      #得到其他类语料的大小
         
-        print size_of_this_category
-        print size_of_other_category
+        print (size_of_this_category)
+        print (size_of_other_category)
         
         #首先计算信息熵
         lamda1 = size_of_this_category / N
         lamda2 = size_of_other_category / N
         
-        print 'lamda1:' + str(lamda1)
-        print 'lamda2:' + str(lamda2)        
+        print ('lamda1:' + str(lamda1))
+        print ('lamda2:' + str(lamda2))
         
         Entropy = -( lamda1 * math.log ( lamda1 ) + lamda2 * math.log ( lamda2 ) )
-        print Entropy
+        print (Entropy)
         
         for word, A in iterm.iteritems():
             if word == 'size_of_the_category':
@@ -81,8 +81,8 @@ def CalInfoGain(data_dict):
                 
                 X = C + D
                 if (X - 0.0) < 0.1:
-                    print 'xxx' + word + 'xxx'
-                    print X
+                    print ('xxx' + word + 'xxx')
+                    print (X)
             
                 #计算IG值
                 beita1 = ( A + B ) / N
