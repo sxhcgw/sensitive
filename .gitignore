@@ -1,0 +1,11 @@
+.idea/*.*
+.project
+.pydevproject
+*.pyc
+conf/default.conf
+test.py
+.settings
+log/*.*
+start.bat
+.sass-cache/
+node_modules/
