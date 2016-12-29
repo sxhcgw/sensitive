@@ -9,16 +9,19 @@ import jieba
 from sensitive import chi
 from sensitive import train_test
 
-corpus_dir = ''       '''原始语料的地址'''
-seg_corpus = ''       '''分词之后的语料地址'''
+corpus_dir = 'resources/test1.txt'       '''原始语料的地址'''
+seg_corpus = 'resources/test_seg.txt'       '''分词之后的语料地址'''
 
 def PreProcess():
     '''对已标注的语料进行预处理：分词'''
     f = open(corpus_dir, 'r')
     w_f = open(seg_corpus, 'w')
     for line in f:
-        label = line[0]
-        line = line[2:-1]
+        content = line.split(',')
+        # label = line[0]
+        label = content[6]
+        # line = line[2:-1]
+        line = content[5]
         seg_list = jieba.cut(line)
         new_line = ' '.join(seg_list)
         w_f.write(label + ' ' + new_line + '\n')

@@ -11,7 +11,7 @@ from sklearn import tree
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
-from sklearn.metrics import metrics
+from sklearn import metrics
 
 def label_save( test_file, save_f ):
     f = open(test_file, 'r')
